@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [NotifController::class, 'index']);
+Route::get('/administrator', [NotifController::class, 'show'])->name('administrator');
 
-Route::get('/', [NotifController::class, 'testNotif'])->name('notif.realtime');
+Route::get('/administrator/test', [NotifController::class, 'sendNotifToClient'])->name('notif.realtime.client');
+Route::get('/administrator/test-admin', [NotifController::class, 'SendNotifToAdmin'])->name('notif.realtime.admin');
